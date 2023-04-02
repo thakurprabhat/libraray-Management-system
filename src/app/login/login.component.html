@@ -1,21 +1,28 @@
 <div class="d-flex justify-content-center m-5">
     <div class="row col-md-8">
-        <div class="col-md-6 px-0">
+        <div class="col-md-6 px-0 image-wrapper">
             <p-image src="../../assets/login.jpg" alt="Image" width="100%" height="550"></p-image>
         </div>
         <div class="col-md-6 bg-color">
-            <div></div>
             <div class="row align-item-center">
-                <h3 class="">Login</h3>
-                <div class="col-md-12 p-2">
-                    <input class="p-inputtext-sm col-6" type="text" pInputText placeholder="Username"/>
-                </div>
-                <div class="col-md-12 p-2">
-                    <input class="p-inputtext-sm col-6" type="password" pInputText placeholder="Password"/>
-                </div>
-                <div class="col-md-12 p-2">
-                    <button pButton type="button" label="Submit" class="col-md-6 p-button-primary"></button>
-                </div>
+                    <h3 class="text-header text-center">Login</h3>
+                    <form  (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+                        <div class="col-md-9 p-2 mx-auto">
+                            <span class="p-input-icon-left w-100">
+                                <i class="pi pi-envelope"></i>
+                                <input class="p-inputtext-sm col-12" type="text" pInputText placeholder="Username" formControlName="userName" />
+                            </span>
+                        </div>
+                        <div class="col-md-9 p-2 mx-auto">
+                            <span class="p-input-icon-left w-100">
+                                <i class="pi pi-lock"></i>
+                            <input class="p-inputtext-sm col-12" type="password" pInputText placeholder="Password" formControlName="password" />
+                            </span>
+                        </div>
+                        <div class="col-md-9 p-2 mx-auto">
+                            <button pButton type="submit" label="Submit" class="w-100 p-button-primary"></button>
+                        </div>
+                    </form>
             </div>
         </div>
     </div>

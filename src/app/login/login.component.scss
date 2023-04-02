@@ -1,9 +1,18 @@
-.align-item-center {
-    position: relative;
-    top: 25%;
-    right: -25%;
+.bg-color {
+  background-color: darkcyan;
 }
 
-.bg-color {
-    background-color: darkcyan;
+.text-header {
+  font-family: "Lucida Sans";
+}
+
+.align-item-center {
+  position: relative;
+  top: 30%;
+}
+
+@media (max-width: 940px) {
+  .image-wrapper {
+    display: none;
+  }
 }

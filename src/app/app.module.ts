@@ -10,14 +10,20 @@ import { ImageModule } from 'primeng/image';
 
 // user component
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MainHeaderComponent } from './main-header/main-header.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    MainHeaderComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     InputTextModule,
     ButtonModule,

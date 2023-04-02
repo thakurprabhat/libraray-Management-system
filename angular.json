@@ -73,10 +73,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "libraryManagementSystem:build:production"
+              "browserTarget": "libraryManagementSystem:build:production",
+              "proxyConfig": ""
             },
             "development": {
-              "browserTarget": "libraryManagementSystem:build:development"
+              "browserTarget": "libraryManagementSystem:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

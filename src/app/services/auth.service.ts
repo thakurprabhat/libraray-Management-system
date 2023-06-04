@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  rootURL = 'api';
+  isAuthenicate: boolean = false;
+  constructor(private http: HttpClient, private router: Router) {}
 
-  rootURL = 'api'
-  constructor(private http:HttpClient) {
-    console.log("constructor",this.rootURL);
-   }
+  doLogin(data: any) {
+    const userData = { username: data.userName, password: data.password };
+    return this.http.post('api/auth', { ...userData }).subscribe(
+      (data: any) => {
+        console.log("call ------");
+        this.isAuthenicate = data?.isAuthenticate;
+        this.router.navigate(['/dashboard']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 
-   doLogin() {
-    console.log("do login",this.rootURL)
-    return this.http.get('api/getUser').subscribe((data) => {
-    }, (error) => {
-      console.log(error)
-    });
-   }
+  getAuthStatus(): boolean {
+    return this.isAuthenicate;
+  }
 }

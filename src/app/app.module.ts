@@ -15,13 +15,15 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    MainHeaderComponent
+    MainHeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

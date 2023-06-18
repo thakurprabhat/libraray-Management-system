@@ -15,7 +15,9 @@ export class AuthService {
     return this.http.post('api/auth', { ...userData }).subscribe(
       (data: any) => {
         console.log("call ------");
-        this.isAuthenicate = data?.isAuthenticate;
+        // this.isAuthenicate = data?.isAuthenticate;
+        this.isAuthenicate = true;
+        console.log(this.isAuthenicate)
         this.router.navigate(['/dashboard']);
       },
       (error) => {
@@ -27,4 +29,9 @@ export class AuthService {
   getAuthStatus(): boolean {
     return this.isAuthenicate;
   }
+
+  setAuthStatus(isAuthenicate: boolean) {
+    this.isAuthenicate = isAuthenicate;
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-header',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class MainHeaderComponent {
 
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onlogout() {
+    this.authService.setAuthStatus(false);
+    this.router.navigateByUrl('/login');
+  }
 }

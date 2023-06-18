@@ -1,10 +1,12 @@
-<nav class="navbar bg-body-tertiary py-3">
+<nav class="navbar bg-body-tertiary py-3 navbar-shadow">
     <div class="container-fluid d-flex jusitfy-between">
         <div>
-            <a class="navbar-brand text-primary" href="#">Library Management System</a>
+            <a class="navbar-brand text-color" href="#">Library Management System</a>
         </div>
         <div>
-            <a class="navbar-brand" href="#">logout</a>
+            <a class="navbar-brand" (click)="onlogout()" aria-label="true">
+                <img src="../../assets/svg-icons/logout.svg" alt="">
+            </a>
         </div>
     </div>
 </nav>
